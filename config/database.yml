@@ -18,8 +18,10 @@ test:
   database: trebekbot_test
 
 production:
+  <<: *default
   adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
+  url: <%= ENV['DATABASE_URL'] %>
   pool: 10
